@@ -5,77 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Food Menu</title>
     <link rel="stylesheet" href="styles.css">
-
-      
 </head>
 <body>
 
 <header>
     <h1>Gym Food Menu</h1>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="bulking">Bulking</div>
+        <div class="tab" data-tab="cutting">Cutting</div>
+    </div>
+    
     <div class="login-search">
         <input type="text" placeholder="Search for items...">
         <button>Login</button>
     </div>
+    <!-- Tabs -->
+
 </header>
 
-<div class="tabs">
-    <div class="tab active" data-tab="bulking">Bulking</div>
-    <div class="tab" data-tab="cutting">Cutting</div>
-</div>
 
+<!-- Bulking Content -->
 <div class="content active" id="bulking">
     <div class="tiles">
-        <!-- Tile 1 -->
         <div class="tile">
             <img src="Bulking-images/download.jpeg" alt="Bulking Food 1">
             <h3>Chicken Breast</h3>
             <p>$10.99</p>
-            <button>View Macros</button>
+            <button class="openpopup" data-popup="popup1">View Macros</button>
         </div>
-        <!-- Tile 2 -->
         <div class="tile">
             <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
             <h3>Steak</h3>
             <p>$15.99</p>
-            <button>View Macros</button>
-        </div>   
-         <!-- Tile 3 -->
-        <div class="tile">
-            <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
-            <h3>Steak</h3>
-            <p>$15.99</p>
-            <button>View Macros</button>
+            <button class="openpopup" data-popup="popup2">View Macros</button>
         </div>
-         <!-- Tile 4 -->
-        <div class="tile">
-            <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
-            <h3>Steak</h3>
-            <p>$15.99</p>
-            <button>View Macros</button>
-        </div>
-       
     </div>
 </div>
 
+<!-- Cutting Content -->
 <div class="content" id="cutting">
     <div class="tiles">
-        <!-- Tile 1 -->
         <div class="tile">
-            <img src="cutting-food1.jpg" alt="Cutting Food 1">
+            <img src="Bulking-images/download.jpeg" alt="Cutting Food 1">
             <h3>Salmon</h3>
             <p>$12.99</p>
-            <button>View Macros</button>
+            <button class="openpopup" data-popup="popup3">View Macros</button>
         </div>
-        <!-- Tile 2 -->
         <div class="tile">
-            <img src="cutting-food2.jpg" alt="Cutting Food 2">
+            <img src="Bulking-images/download.jpeg" alt="Cutting Food 2">
             <h3>Grilled Chicken</h3>
             <p>$9.99</p>
-            <button>View Macros</button>
+            <button class="openpopup" data-popup="popup4">View Macros</button>
         </div>
-        <!-- Add more tiles as needed -->
     </div>
 </div>
+
+<!-- Popups -->
+<div id="popup1" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" data-popup="popup1">&times;</span>
+        <p><b>Macros for Chicken Breast:</b></p>
+        <ul>
+            <li>Calories: 165</li>
+            <li>Protein: 31g</li>
+            <li>Fat: 3.6g</li>
+            <li>Carbs: 0g</li>
+        </ul>
+        <img src="Bulking-images/download.jpeg">
+    </div>
+</div>
+
+<div id="popup2" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" data-popup="popup2">&times;</span>
+        <p><b>Macros for Steak:</b></p>
+        <ul>
+            <li>Calories: 679</li>
+            <li>Protein: 62g</li>
+            <li>Fat: 48g</li>
+            <li>Carbs: 0g</li>
+        </ul>
+        <img src="Bulking-images/download.jpeg">
+    </div>
+</div>
+
+<div id="popup3" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" data-popup="popup3">&times;</span>
+        <p><b>Macros for Salmon:</b></p>
+        <ul>
+            <li>Calories: 206</li>
+            <li>Protein: 22g</li>
+            <li>Fat: 13g</li>
+            <li>Carbs: 0g</li>
+        </ul>
+        <img src="Bulking-images/download.jpeg">
+    </div>
+</div>
+
+<div id="popup4" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" data-popup="popup4">&times;</span>
+        <p><b>Macros for Grilled Chicken:</b></p>
+        <ul>
+            <li>Calories: 165</li>
+            <li>Protein: 31g</li>
+            <li>Fat: 3.6g</li>
+            <li>Carbs: 0g</li>
+        </ul>
+    <img src="Bulking-images/download.jpeg">
+</div>
+</div>
+
 <script src="script.js"></script>
 
 </body>
