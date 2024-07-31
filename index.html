@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1f1f1f;
+            border-bottom: 1px solid #333;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header .login-search {
+            display: flex;
+            align-items: center;
+        }
+        header .login-search input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        header .login-search button {
+            padding: 5px 10px;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #333;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: #555;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+        }
+        .content.active {
+            display: block;
+        }
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tile {
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            background: #1e1e1e;
+        }
+        .tile img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .tile h3 {
+            margin: 10px 0;
+        }
+        .tile p {
+            margin: 5px 0;
+        }
+        .tile button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gym Food Menu</h1>
+    <div class="login-search">
+        <input type="text" placeholder="Search for items...">
+        <button>Login</button>
+    </div>
+</header>
+
+<div class="tabs">
+    <div class="tab active" data-tab="bulking">Bulking</div>
+    <div class="tab" data-tab="cutting">Cutting</div>
+</div>
+
+<div class="content active" id="bulking">
+    <div class="tiles">
+        <!-- Tile 1 -->
+        <div class="tile">
+            <img src="Bulking-images/download.jpeg" alt="Bulking Food 1">
+            <h3>Chicken Breast</h3>
+            <p>$10.99</p>
+            <button>View Macros</button>
+        </div>
+        <!-- Tile 2 -->
+        <div class="tile">
+            <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
+            <h3>Steak</h3>
+            <p>$15.99</p>
+            <button>View Macros</button>
+        </div>   
+         <!-- Tile 3 -->
+        <div class="tile">
+            <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
+            <h3>Steak</h3>
+            <p>$15.99</p>
+            <button>View Macros</button>
+        </div>
+         <!-- Tile 4 -->
+        <div class="tile">
+            <img src="Bulking-images/download.jpeg" alt="Bulking Food 2">
+            <h3>Steak</h3>
+            <p>$15.99</p>
+            <button>View Macros</button>
+        </div>
+       
+    </div>
+</div>
+
+<div class="content" id="cutting">
+    <div class="tiles">
+        <!-- Tile 1 -->
+        <div class="tile">
+            <img src="cutting-food1.jpg" alt="Cutting Food 1">
+            <h3>Salmon</h3>
+            <p>$12.99</p>
+            <button>View Macros</button>
+        </div>
+        <!-- Tile 2 -->
+        <div class="tile">
+            <img src="cutting-food2.jpg" alt="Cutting Food 2">
+            <h3>Grilled Chicken</h3>
+            <p>$9.99</p>
+            <button>View Macros</button>
+        </div>
+        <!-- Add more tiles as needed -->
+    </div>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
